@@ -5,6 +5,8 @@ services:
     hostname: db
     volumes:
       - ./dump/:/docker-entrypoint-initdb.d/
+      - ./mysql/data/:/data
+      - ./mysql/persistent/:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: sartika
@@ -15,14 +17,15 @@ services:
       - 3306:3306
     networks:
       - backend
+    restart: unless-stopped
 
   adminer:
     image: adminer
     ports:
       - 8080:8080
-
     networks:
       - backend
+    restart: unless-stopped
 
 networks:
   backend:

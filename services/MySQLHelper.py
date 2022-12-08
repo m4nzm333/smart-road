@@ -24,20 +24,18 @@ def insertAccelerometer(idAlat, x, y, z):
     mycursor.close()
     mydb.close()
 
-# def getConfig(name):
-import mysql.connector
+def getConfig(name):
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="smartroad"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute('SELECT * FROM config WHERE name="%s"' % name)
+    myresult = mycursor.fetchall()
+    mycursor.close()
+    mydb.close()
+    return myresult[0][2]
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="smartroad"
-)
-
-mycursor = mydb.cursor()
-
-mycursor.execute('SELECT * FROM config WHERE name="%s"' % 'accelerometer_record')
-
-myresult = mycursor.fetchall()
-
-print(myresult[0][1])
+print(getConfig('accelerometer_record'))
