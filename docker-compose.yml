@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    hostname: db
+    volumes:
+      - ./dump/:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: sartika
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: smartroad
+      TZ: Asia/Makassar
+    ports:
+      - 3306:3306
+    networks:
+      - backend
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
+    networks:
+      - backend
+
+networks:
+  backend:
