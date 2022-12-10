@@ -1,2 +1,5 @@
 mysql/persistent
 */__pycache__
+
+services/camera/*
+!services/camera/.gitkeep
