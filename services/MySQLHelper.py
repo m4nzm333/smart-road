@@ -37,5 +37,3 @@ def getConfig(name):
     mycursor.close()
     mydb.close()
     return myresult[0][2]
-
-print(getConfig('accelerometer_record'))

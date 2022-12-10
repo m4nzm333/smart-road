@@ -80,8 +80,8 @@ def main():
                 Gy = gyro_y/131.0
                 Gz = gyro_z/131.0
                 # print('Az = %.5f' % Ax)
-                print(deviceId)
-                print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az)
+                # print(deviceId)
+                # print ("Gx=%.2f" %Gx, u'\u00b0'+ "/s", "\tGy=%.2f" %Gy, u'\u00b0'+ "/s", "\tGz=%.2f" %Gz, u'\u00b0'+ "/s", "\tAx=%.2f g" %Ax, "\tAy=%.2f g" %Ay, "\tAz=%.2f g" %Az)
                 insertAccelerometer(deviceId, Ax, Ay, Az)
                 bus.close()
                 sleep(.1)
