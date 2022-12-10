@@ -27,12 +27,18 @@
     <a href="setAccelerometer?status=1" class="btn btn-danger">Accelerometer Mati</a>
     {% endif %}
 
-
-
+    <div class="container">
+        <img src="#" alt="camera" width="600" id="imgCamera" />
+    </div>
 
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/popper.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script>
+        setInterval(() => {
+            $("#imgCamera").attr('src', 'getLastCamera?id=' + Math.floor(Math.random() * 9999));
+        }, 1000)
+    </script>
 </body>
 
 </html>
