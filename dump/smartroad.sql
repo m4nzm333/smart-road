@@ -14,7 +14,7 @@ CREATE TABLE `accelerometer` (
   `x` float NOT NULL,
   `y` float NOT NULL,
   `z` float NOT NULL,
-  `ts` timestamp NOT NULL,
+  `ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -28,7 +28,5 @@ CREATE TABLE `config` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `config` (`id`, `name`, `value`, `desc`) VALUES
-(1,	'accelerometer_record',	'0',	'Ini adalah konfig status accel klo ingin merekam.');
 
--- 2022-12-08 02:13:23
+-- 2022-12-10 18:27:43
