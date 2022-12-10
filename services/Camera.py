@@ -3,11 +3,10 @@ from time import sleep
 from datetime import datetime
 from MySQLHelper import getConfig
 
-cam_port = 0
-cam = VideoCapture(cam_port)
-
 def main():
-    
+    cam_port = 0
+    cam = VideoCapture(cam_port)
+
     while True:
         accelEnable = getConfig('camera_record')
         if accelEnable == '1':

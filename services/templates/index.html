@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Road</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <h1>Smart Road</h1>
+
+    {% if cameraStatus == 1 %}
+    <a href="setCamera?status=0" class="btn btn-success">Camera Nyala</a>
+    {% else %}
+    <a href="setCamera?status=1" class="btn btn-danger">Camera Mati</a>
+    {% endif %}
+
+    {% if accelerometerStatus == 1 %}
+    <a href="setAccelerometer?status=0" class="btn btn-success">Accelerometer Nyala</a>
+    {% else %}
+    <a href="setAccelerometer?status=1" class="btn btn-danger">Accelerometer Mati</a>
+    {% endif %}
+
+
+
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

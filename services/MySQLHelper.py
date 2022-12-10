@@ -37,3 +37,17 @@ def getConfig(name):
     mycursor.close()
     mydb.close()
     return myresult[0][2]
+
+def setConfig(name, value):
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="smartroad"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute('UPDATE config SET value = %s WHERE name = "%s"' % (value , name))
+    mydb.commit()
+    mycursor.close()
+    mydb.close()
+    return
